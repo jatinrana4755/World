@@ -1,0 +1,15 @@
+@media screen and (max-width:480px){
+    .no{
+        width: 38vw;
+        margin-left:27vw;
+        align-items: center;
+        margin-top: 2vh;
+    }
+    .like{
+        margin-left:27vw;
+    }
+    .yes{
+        margin-left:4.9vw;
+        
+    }
+}

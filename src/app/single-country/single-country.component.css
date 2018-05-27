@@ -1,0 +1,24 @@
+:root{
+    font-size: 16px;
+}
+.cover{
+    height:66vh;;
+    width:100%;
+}
+.item{
+text-align: center;
+
+
+}
+.color{
+    background-color: #f8f9fb;
+}
+.p{
+    color: #323c46;
+    font-weight: 650;
+    font-size: 1.4rem;
+
+}
+.font{
+    font-size: 1.1rem;
+}

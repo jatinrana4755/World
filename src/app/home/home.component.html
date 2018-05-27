@@ -1,0 +1,20 @@
+
+<div class="container" >
+  
+  <div class="row" >
+      <div *ngFor="let r of getRegion" class="col-md-4">
+        <br><br>
+        
+          <div class="card  border-secondary yes" style="width: 18rem;">
+              <img class="card-img-top img-fluid" src="assets/{{r}}.png" alt="">
+              <div class="card-body">
+                <h5 class="card-title">{{r}}</h5>
+                <p class="card-text">Click to see the details of  {{r}}.</p>
+                <a [routerLink]="['/all-countries',r]" class="btn btn-primary">View More</a>
+              </div>
+              </div>
+      
+      </div>
+    
+    
+  

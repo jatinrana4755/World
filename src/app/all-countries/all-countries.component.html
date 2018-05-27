@@ -1,0 +1,51 @@
+<br>
+<br>
+<br>
+<a class="btn btn-warning margin" (click)="goBackToPreviousPage()">Go Back </a>
+<div class="form-group">
+
+  <span class="like">Search Name Here:</span>
+  <input class="form-control no" type="text" [(ngModel)]="search" placeholder="Search...">
+
+</div>
+
+<div class="container">
+  <div class="row color">
+    <div *ngFor="let reg of regions | filter:search" class="col-md-4 ">
+      <div class="card yes" style="width: 18rem;">
+        <img class="card-img-top img-fluid size " src="{{reg.flag}}" alt="">
+        <div class="card-body">
+          <h5 class="card-title">{{reg.name}}</h5>
+          <hr>
+          <p class="card-text">Capital: {{reg.capital}}</p>
+          <hr>
+          <p class="card-text">TimeZone: {{reg.timezones}}</p>
+          <hr>
+          <span *ngFor="let c of reg.currencies"> Currency: {{c.name}}</span>
+          <hr>
+          <p class="card-text">Subregions: {{reg.subregion}}</p>
+          <hr>
+          <p class="card-text">population: {{reg.population}}</p>
+          <hr>
+          <p>Currency:
+            <span *ngFor="let c of reg.currencies; let i = last">
+              <a [routerLink]="['/all-countries/' + reg.name]" [queryParams]="{ 'currency' : c.code, 'name' : c.name}">{{c.name}} </a>{{i ? "" : ","}} </span>
+          </p>
+          <hr>
+
+
+          <a [routerLink]="['/single-country',reg.name]" class="btn btn-primary">View More
+
+          </a>
+        </div>
+      </div>
+      <br>
+      <br>
+    </div>
+
+  </div>
+
+</div>
+<br>
+<br>
+<br>

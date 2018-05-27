@@ -1,0 +1,50 @@
+<br>
+<div class="container-fluid margin" *ngIf="singleCountry">
+  <div class="row ">
+    <div *ngFor="let single of singleCountry" class="col-12 color item">
+      <br>
+      <p class="p">Country Details </p>
+      <br>
+      <img src="{{single.flag}}" class="img-fluid cover">
+      <br>
+      <br>
+      <p class="p"> {{single.name}}</p>
+      <hr>
+      <p>
+        <span class="text-muted font">Capital:</span> {{single.capital}}</p>
+      <hr>
+      <p>
+        <span class="text-muted font"> Region:</span> {{single.region}}</p>
+      <hr>
+      <p>
+        <span class="text-muted font">Subregion:</span> {{single.subregion}}</p>
+      <hr>
+      <p>
+        <span class="text-muted font">Population:</span> {{single.population}}</p>
+      <hr>
+      <p *ngFor="let c of single.currencies">
+        <span class="text-muted font">Currency:</span> {{c.name}}</p>
+      <hr>
+      <p>
+        <span class="text-muted font">TimeZone:</span> {{single.timezones}}</p>
+      <hr>
+      <p *ngFor="let a of single.regionalBlocs">
+        <span class="text-muted font">Acronym:</span> {{a.acronym}}</p>
+
+      <hr>
+      <p>Languages:
+        <span *ngFor="let l of single.languages; let first=first; let last = last">
+          <a [routerLink]="['/all-countries/' + single.region]" [queryParams]="{ 'language' : l.iso639_1, 'name' : l.name}">{{l.name}}{{last?'':','}}</a>
+          <br>
+        </span>
+      </p>
+      <hr>
+
+      <a class="btn btn-warning" (click)="goBackToPreviousPage()">Go Back </a>
+      <br>
+      <br>
+    </div>
+
+
+  </div>
+</div>
